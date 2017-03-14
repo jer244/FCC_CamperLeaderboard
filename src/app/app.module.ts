@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LeaderTableComponent } from './leader-table/leader-table.component';
+import { HttpService } from './http.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { LeaderTableComponent } from './leader-table/leader-table.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

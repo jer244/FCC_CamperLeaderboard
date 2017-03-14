@@ -1,4 +1,5 @@
 <div class="table-cont">
+  <button (click)="toggle()">Toggle</button>
   <table class="table  table-striped table-condensed">
     <thead>
       <tr>
@@ -9,12 +10,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>30</td>
-        <td>Joe bags</td>
-        <td>3098</td>
-        <td>39399</td>
-      </tr>
+      <template [ngIf]="alltime" >
+         <tr *ngFor="let leader of alltimeLeaders; let i= index" >
+          <td>{{i+1}}</td>
+          <td>{{leader.username}}</td>
+          <td>{{leader.recent}}</td>
+          <td>{{leader.alltime}}</td>
+        </tr>
+     </template>
+     <template [ngIf]="!alltime" >
+        <tr *ngFor="let leader of recentLeaders; let i= index" >
+          <td>{{i+1}}</td>
+          <td>{{leader.username}}</td>
+          <td>{{leader.recent}}</td>
+          <td>{{leader.alltime}}</td>
+        </tr>
+     </template>
     </tbody>
   </table>
 </div>
