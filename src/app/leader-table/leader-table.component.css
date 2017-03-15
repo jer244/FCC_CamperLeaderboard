@@ -1,7 +1,35 @@
 .table-cont {
-    margin: 5% 10% 10% 5%;
+    margin: 5% 10% 2% 10%;
 }
 
 th, td {
     text-align: center;
+}
+
+hr {
+    color: rgb(73,44,20);
+    margin-bottom: 5px;
+}
+
+.buttonDiv {
+    width: 60%;
+    margin: auto;
+    height: 50px;
+    margin-top: 50px;
+}
+
+.btn {
+    background: rgba(73,44,20, 0.8);
+    border: 1px solid white;
+    height: 40px;
+}
+
+.btn:hover {
+    background: rgba(73,44,20, 0.7);
+    border: 1px solid rgba(73,44,20, 0.9);
+}
+
+.btn.active, .btn:focus {
+    background: rgb(73,44,20);
+    outline: none;
 }

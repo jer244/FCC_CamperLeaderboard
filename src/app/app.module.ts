@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LeaderTableComponent } from './leader-table/leader-table.component';
 import { HttpService } from './http.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LeaderTableComponent
+    LeaderTableComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

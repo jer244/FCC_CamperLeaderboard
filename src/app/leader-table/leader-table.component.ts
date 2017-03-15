@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Response } from '@angular/http';
 
 import { HttpService } from '../http.service';
+import { Leader } from '../leader';
 
 @Component({
   selector: 'cl-leader-table',
@@ -11,30 +11,29 @@ import { HttpService } from '../http.service';
 
 export class LeaderTableComponent implements OnInit {
 
-  constructor(private httpService: HttpService) {};
+  alltime: boolean;
 
-  alltime: boolean = true;
+  alltimeLeaders: Leader[];
 
-  alltimeLeaders: JSON[] = [];
+  recentLeaders: Leader[];
 
-  recentLeaders: JSON[] = [];
+  constructor(private httpService: HttpService) {
+    this.alltime = true;
+   }
 
   ngOnInit() {
     this.httpService.getAlltimeData()
       .subscribe(
         (data: any) => this.alltimeLeaders = data.slice(0, 100)
-      )
+      );
 
     this.httpService.getRecentData()
       .subscribe(
         (data: any) => this.recentLeaders = data.slice(0, 100)
-      )
+      );
   }
 
-  toggle() {
-    if(this.alltime){
-      this.alltime=false;
-    }else
-    this.alltime=true;
+  toggle(alltime: boolean) {
+    this.alltime = alltime;
   }
 }

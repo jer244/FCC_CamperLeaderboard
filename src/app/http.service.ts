@@ -16,5 +16,4 @@ export class HttpService {
     return this.http.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
       .map((response: Response) => response.json());
   }
-
 }
